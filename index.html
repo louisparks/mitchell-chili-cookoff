@@ -190,6 +190,55 @@
             content: "🌶️ ";
         }
 
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 4px solid var(--blue);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--blue);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card .price {
+            font-family: 'Alfa Slab One', cursive;
+            font-size: 3rem;
+            color: var(--orange);
+            margin-bottom: 10px;
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--dark-orange) 100%);
+            border-color: var(--orange);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured h3,
+        .pricing-card.featured .price {
+            color: white;
+        }
+
         /* CTA Button */
         .cta-button {
             display: inline-block;
@@ -514,6 +563,27 @@
                 <div class="info-card">
                     <h3>🎉 Community</h3>
                     <p>Join neighbors and friends for an afternoon of food, fun, and friendly competition!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Admission</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Kids Admission</h3>
+                    <div class="price">$10</div>
+                </div>
+                <div class="pricing-card">
+                    <h3>Adult Admission</h3>
+                    <div class="price">$25</div>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Adult Admission<br>w/Alcohol</h3>
+                    <div class="price">$40</div>
                 </div>
             </div>
         </div>
