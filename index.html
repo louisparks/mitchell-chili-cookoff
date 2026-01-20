@@ -3,22 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>Mitchell 2nd Annual Chili Cook-Off</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange: #FF6B35;
+            --blue: #1E3A5F;
+            --light-blue: #4A90E2;
+            --cream: #F5F1E8;
+            --dark-orange: #D94E1F;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--cream);
+            color: var(--blue);
             line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--light-blue) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🌶️";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -20px;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: "🌶️";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -20px;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-family: 'Alfa Slab One', cursive;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 var(--orange);
+        }
+
+        .hero .subtitle {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .hero .date-time {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background-color: white;
+            color: var(--blue);
+            padding: 20px 40px;
+            display: inline-block;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero .location {
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+
+        /* Poster Section */
+        .poster-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .poster-section img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border: 8px solid var(--blue);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        section h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: var(--orange);
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--dark-orange) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Rules Section */
+        .rules-list {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            background-color: var(--cream);
+            padding: 40px;
+            border-radius: 15px;
+            border: 4px solid var(--blue);
         }
-        h1 {
-            color: #333;
+
+        .rules-list li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        .rules-list li::marker {
+            content: "🌶️ ";
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-orange);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--blue);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .hero .date-time {
+                font-size: 1.8rem;
+                padding: 15px 30px;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Pages Site</h1>
-    <p>This is a new GitHub Pages site. Edit index.html to customize it.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Mitchell</h1>
+            <div class="subtitle">2nd Annual Chili Cook-Off</div>
+            <div class="date-time">FEB 1, 12-3PM</div>
+            <div class="location">📍 Dark Matter Warehouse<br>475 N. Campbell Ave.</div>
+        </div>
+    </div>
+
+    <!-- Poster Section -->
+    <section class="poster-section">
+        <div class="container">
+            <img src="poster.png" alt="Mitchell 2nd Annual Chili Cook-Off Poster">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Event</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🏆 Competition</h3>
+                    <p>Bring your best chili recipe and compete for the title of Mitchell's Chili Champion!</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌶️ Tasting</h3>
+                    <p>Sample amazing chili from talented home cooks and vote for your favorite!</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎉 Community</h3>
+                    <p>Join neighbors and friends for an afternoon of food, fun, and friendly competition!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules">
+        <div class="container">
+            <h2>Cook-Off Rules</h2>
+            <div class="rules-list">
+                <ul>
+                    <li>Chili must be homemade (no store-bought chili allowed)</li>
+                    <li>Bring at least 1 gallon of chili for tasting</li>
+                    <li>Provide ingredient list for allergen information</li>
+                    <li>Traditional, vegetarian, and creative chilis all welcome</li>
+                    <li>Judging based on taste, texture, and presentation</li>
+                    <li>Keep your chili warm - bring a slow cooker if possible</li>
+                    <li>Entry deadline: January 28th</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Compete?</h2>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px;">
+                Register your chili entry today! Limited spots available for competitors.
+            </p>
+            <a href="mailto:mitchell.chili.cookoff@example.com?subject=Chili Cook-Off Registration" class="cta-button">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mitchell 2nd Annual Chili Cook-Off. All rights reserved.</p>
+            <p style="margin-top: 10px;">🌶️ Spice up your day! 🌶️</p>
+        </div>
+    </footer>
 </body>
 </html>
