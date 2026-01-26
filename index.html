@@ -1,764 +1,904 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mitchell 2nd Annual Chili Cook-Off</title>
-    
+
     <!-- Open Graph / Social Media Preview -->
-    <meta property="og:title" content="Mitchell 2nd Annual Chili Cook-Off">
-    <meta property="og:description" content="Join us February 1st, 12-3pm at Dark Matter Warehouse for the 2nd Annual Mitchell Chili Cook-Off!">
-    <meta property="og:image" content="https://louisparks.github.io/mitchell-chili-cookoff/images/5L1A0230.jpg">
-    <meta property="og:url" content="https://louisparks.github.io/mitchell-chili-cookoff/">
-    <meta property="og:type" content="website">
-    
+    <meta property="og:title" content="Mitchell 2nd Annual Chili Cook-Off" />
+    <meta
+      property="og:description"
+      content="Join us February 1st, 12-3pm at Dark Matter Warehouse for the 2nd Annual Mitchell Chili Cook-Off!"
+    />
+    <meta
+      property="og:image"
+      content="https://louisparks.github.io/mitchell-chili-cookoff/images/5L1A0230.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://louisparks.github.io/mitchell-chili-cookoff/"
+    />
+    <meta property="og:type" content="website" />
+
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mitchell 2nd Annual Chili Cook-Off">
-    <meta name="twitter:description" content="Join us February 1st, 12-3pm at Dark Matter Warehouse for the 2nd Annual Mitchell Chili Cook-Off!">
-    <meta name="twitter:image" content="https://louisparks.github.io/mitchell-chili-cookoff/images/5L1A0230.jpg">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mitchell 2nd Annual Chili Cook-Off" />
+    <meta
+      name="twitter:description"
+      content="Join us February 1st, 12-3pm at Dark Matter Warehouse for the 2nd Annual Mitchell Chili Cook-Off!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://louisparks.github.io/mitchell-chili-cookoff/images/5L1A0230.jpg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --orange: #FF6B35;
-            --blue: #1E3A5F;
-            --light-blue: #4A90E2;
-            --cream: #F5F1E8;
-            --dark-orange: #D94E1F;
-        }
+      :root {
+        --orange: #ff6b35;
+        --blue: #1e3a5f;
+        --light-blue: #4a90e2;
+        --cream: #f5f1e8;
+        --dark-orange: #d94e1f;
+      }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--cream);
-            color: var(--blue);
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--cream);
+        color: var(--blue);
+        line-height: 1.6;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Header/Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--light-blue) 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 8px solid var(--orange);
-            position: relative;
-            overflow: hidden;
-        }
+      /* Header/Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--blue) 0%,
+          var(--light-blue) 100%
+        );
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-bottom: 8px solid var(--orange);
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero::before {
-            content: "🌶️";
-            position: absolute;
-            font-size: 150px;
-            opacity: 0.1;
-            top: -20px;
-            left: 10%;
-            animation: float 6s ease-in-out infinite;
-        }
+      .hero::before {
+        content: "🌶️";
+        position: absolute;
+        font-size: 150px;
+        opacity: 0.1;
+        top: -20px;
+        left: 10%;
+        animation: float 6s ease-in-out infinite;
+      }
 
-        .hero::after {
-            content: "🌶️";
-            position: absolute;
-            font-size: 150px;
-            opacity: 0.1;
-            bottom: -20px;
-            right: 10%;
-            animation: float 8s ease-in-out infinite;
-        }
+      .hero::after {
+        content: "🌶️";
+        position: absolute;
+        font-size: 150px;
+        opacity: 0.1;
+        bottom: -20px;
+        right: 10%;
+        animation: float 8s ease-in-out infinite;
+      }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
         }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
 
+      .hero h1 {
+        font-family: "Alfa Slab One", cursive;
+        font-size: 4rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 0 var(--orange);
+      }
+
+      .hero .subtitle {
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+      }
+
+      .hero .date-time {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background-color: white;
+        color: var(--blue);
+        padding: 20px 40px;
+        display: inline-block;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero .location {
+        font-size: 1.3rem;
+        margin-top: 20px;
+      }
+
+      /* Poster Section */
+      .poster-section {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: white;
+      }
+
+      .poster-section img {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+        border: 8px solid var(--blue);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 60px 20px;
+      }
+
+      section:nth-child(even) {
+        background-color: white;
+      }
+
+      section h2 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 3rem;
+        color: var(--orange);
+        text-align: center;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .info-card {
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--dark-orange) 100%
+        );
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .info-card h3 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      .info-card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      /* Rules Section */
+      .rules-list {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: var(--cream);
+        padding: 40px;
+        border-radius: 15px;
+        border: 4px solid var(--blue);
+      }
+
+      .rules-list li {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        padding-left: 10px;
+      }
+
+      .rules-list li::marker {
+        content: "🌶️ ";
+      }
+
+      /* FAQ Section */
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-item h3 {
+        color: var(--orange);
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      .faq-item p {
+        color: var(--blue);
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .faq-item ul {
+        list-style-position: inside;
+        margin-top: 10px;
+      }
+
+      .faq-item li {
+        margin-bottom: 8px;
+        color: var(--blue);
+      }
+
+      /* Pricing Section */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .pricing-card {
+        background: white;
+        border: 4px solid var(--blue);
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .pricing-card h3 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.8rem;
+        color: var(--blue);
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+      }
+
+      .pricing-card .price {
+        font-family: "Alfa Slab One", cursive;
+        font-size: 3rem;
+        color: var(--orange);
+        margin-bottom: 10px;
+      }
+
+      .pricing-card.featured {
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--dark-orange) 100%
+        );
+        border-color: var(--orange);
+        transform: scale(1.05);
+      }
+
+      .pricing-card.featured h3,
+      .pricing-card.featured .price {
+        color: white;
+      }
+
+      /* CTA Button */
+      .cta-button {
+        display: inline-block;
+        background: var(--orange);
+        color: white;
+        padding: 20px 50px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 30px;
+      }
+
+      .cta-button:hover {
+        background: var(--dark-orange);
+        transform: scale(1.05);
+      }
+
+      .cta-button.secondary {
+        background: white;
+        color: var(--blue);
+        border: 3px solid white;
+      }
+
+      .cta-button.secondary:hover {
+        background: var(--cream);
+        color: var(--blue);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 60px;
+      }
+
+      /* Responsive */
+      /* Carousel Section */
+      .carousel-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .carousel-slide {
+        display: none;
+        animation: fadeIn 0.5s;
+      }
+
+      .carousel-slide.active {
+        display: block;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 107, 53, 0.8);
+        color: white;
+        border: none;
+        padding: 20px 15px;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        z-index: 10;
+      }
+
+      .carousel-btn:hover {
+        background-color: var(--orange);
+      }
+
+      .carousel-btn.prev {
+        left: 10px;
+      }
+
+      .carousel-btn.next {
+        right: 10px;
+      }
+
+      .carousel-dots {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .dot.active {
+        background-color: var(--orange);
+      }
+
+      @media (max-width: 768px) {
         .hero h1 {
-            font-family: 'Alfa Slab One', cursive;
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 0 var(--orange);
+          font-size: 2.5rem;
         }
 
         .hero .subtitle {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+          font-size: 1.5rem;
         }
 
         .hero .date-time {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background-color: white;
-            color: var(--blue);
-            padding: 20px 40px;
-            display: inline-block;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .hero .location {
-            font-size: 1.3rem;
-            margin-top: 20px;
-        }
-
-        /* Poster Section */
-        .poster-section {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: white;
-        }
-
-        .poster-section img {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            border: 8px solid var(--blue);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 60px 20px;
-        }
-
-        section:nth-child(even) {
-            background-color: white;
+          font-size: 1.8rem;
+          padding: 15px 30px;
         }
 
         section h2 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            color: var(--orange);
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .info-card {
-            background: linear-gradient(135deg, var(--orange) 0%, var(--dark-orange) 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .info-card h3 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Rules Section */
-        .rules-list {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--cream);
-            padding: 40px;
-            border-radius: 15px;
-            border: 4px solid var(--blue);
-        }
-
-        .rules-list li {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            padding-left: 10px;
-        }
-
-        .rules-list li::marker {
-            content: "🌶️ ";
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .faq-item h3 {
-            color: var(--orange);
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .faq-item p {
-            color: var(--blue);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .faq-item ul {
-            list-style-position: inside;
-            margin-top: 10px;
-        }
-
-        .faq-item li {
-            margin-bottom: 8px;
-            color: var(--blue);
-        }
-
-        /* Pricing Section */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: white;
-            border: 4px solid var(--blue);
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .pricing-card h3 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.8rem;
-            color: var(--blue);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .pricing-card .price {
-            font-family: 'Alfa Slab One', cursive;
-            font-size: 3rem;
-            color: var(--orange);
-            margin-bottom: 10px;
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(135deg, var(--orange) 0%, var(--dark-orange) 100%);
-            border-color: var(--orange);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured h3,
-        .pricing-card.featured .price {
-            color: white;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-block;
-            background: var(--orange);
-            color: white;
-            padding: 20px 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 30px;
-        }
-
-        .cta-button:hover {
-            background: var(--dark-orange);
-            transform: scale(1.05);
-        }
-
-        .cta-button.secondary {
-            background: white;
-            color: var(--blue);
-            border: 3px solid white;
-        }
-
-        .cta-button.secondary:hover {
-            background: var(--cream);
-            color: var(--blue);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--blue);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        /* Responsive */
-        /* Carousel Section */
-        .carousel-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .carousel-slide {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .carousel-slide.active {
-            display: block;
+          font-size: 2rem;
         }
 
         .carousel-slide img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+          height: 400px;
         }
 
         .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 107, 53, 0.8);
-            color: white;
-            border: none;
-            padding: 20px 15px;
-            font-size: 2rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            z-index: 10;
+          padding: 15px 10px;
+          font-size: 1.5rem;
         }
-
-        .carousel-btn:hover {
-            background-color: var(--orange);
-        }
-
-        .carousel-btn.prev {
-            left: 10px;
-        }
-
-        .carousel-btn.next {
-            right: 10px;
-        }
-
-        .carousel-dots {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            margin: 0 5px;
-            background-color: #ccc;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .dot.active {
-            background-color: var(--orange);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.5rem;
-            }
-            
-            .hero .date-time {
-                font-size: 1.8rem;
-                padding: 15px 30px;
-            }
-            
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .carousel-slide img {
-                height: 400px;
-            }
-
-            .carousel-btn {
-                padding: 15px 10px;
-                font-size: 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Hero Section -->
     <div class="hero">
-        <div class="container">
-            <img src="fom-logo.png" alt="Friends of Mitchell Logo" style="max-width: 300px; width: 100%; height: auto; margin-bottom: 20px;">
-            <h1>Chili Cook-Off</h1>
-            <div class="subtitle">2nd Annual</div>
-            <div class="date-time">FEB 1, 2026 | 12-3PM</div>
-            <div class="location">📍 <a href="https://www.google.com/maps/place/475+N+Campbell+Ave,+Chicago,+IL+60612/@41.8905799,-87.6915953,1776m/data=!3m2!1e3!4b1!4m6!3m5!1s0x880e2d51949d6f45:0x30230e6e7541519c!8m2!3d41.8905799!4d-87.6890204!16s%2Fg%2F11y9xx248k?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" style="color: white; text-decoration: underline;">Dark Matter Warehouse<br>475 N. Campbell Ave.<br>Chicago, IL</a></div>
-            <div style="margin-top: 30px;">
-                <a href="http://bidpal.net/26chilicookoff" class="cta-button" target="_blank" style="margin: 10px;">Attendee Registration</a>
-                <a href="https://docs.google.com/spreadsheets/d/1Pp9FMXwoS2Bc0pWrGl9r_kI46mGtjpSjnW4T47TN18c/edit?usp=sharing" class="cta-button secondary" target="_blank" style="margin: 10px;">Contestant Registration</a>
-            </div>
+      <div class="container">
+        <img
+          src="fom-logo.png"
+          alt="Friends of Mitchell Logo"
+          style="
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+          "
+        />
+        <h1>Chili Cook-Off</h1>
+        <div class="subtitle">2nd Annual</div>
+        <div class="date-time">FEB 1, 2026 | 12-3PM</div>
+        <div class="location">
+          📍
+          <a
+            href="https://www.google.com/maps/place/475+N+Campbell+Ave,+Chicago,+IL+60612/@41.8905799,-87.6915953,1776m/data=!3m2!1e3!4b1!4m6!3m5!1s0x880e2d51949d6f45:0x30230e6e7541519c!8m2!3d41.8905799!4d-87.6890204!16s%2Fg%2F11y9xx248k?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+            target="_blank"
+            style="color: white; text-decoration: underline"
+            >Dark Matter Warehouse<br />475 N. Campbell Ave.<br />Chicago, IL</a
+          >
         </div>
+        <div style="margin-top: 30px">
+          <a
+            href="http://bidpal.net/26chilicookoff"
+            class="cta-button"
+            target="_blank"
+            style="margin: 10px"
+            >Attendee Registration</a
+          >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1Pp9FMXwoS2Bc0pWrGl9r_kI46mGtjpSjnW4T47TN18c/edit?usp=sharing"
+            class="cta-button secondary"
+            target="_blank"
+            style="margin: 10px"
+            >Contestant Registration</a
+          >
+        </div>
+      </div>
     </div>
 
     <!-- Photo Gallery Carousel -->
     <section id="gallery">
-        <div class="container">
-            <div class="carousel-container">
-                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
-                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
-                
-                <div class="carousel-slide active">
-                    <img src="images/5L1A0230.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0163.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0168.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0171.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0264.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0155.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0157.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0175.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0176.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0181.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0185.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0190.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0194.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0196.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0199.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0200.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0201.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0202.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0203.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0207.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0209.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0211.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0212.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0214.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0215.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0224.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0236.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0238.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0242.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0247.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0254.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0257.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0261.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0265.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0267.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0269.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0270.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0272.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0276.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0278.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0280.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0283.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0285.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0286.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0287.jpg" alt="Chili Cook-Off 2025">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/5L1A0298.jpg" alt="Chili Cook-Off 2025">
-                </div>
-            </div>
-            <div class="carousel-dots" id="dotsContainer"></div>
+      <div class="container">
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+          <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+
+          <div class="carousel-slide active">
+            <img src="images/5L1A0230.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0163.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0168.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0171.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0264.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0155.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0157.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0175.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0176.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0181.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0185.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0190.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0194.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0196.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0199.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0200.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0201.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0202.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0203.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0207.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0209.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0211.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0212.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0214.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0215.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0224.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0236.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0238.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0242.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0247.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0254.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0257.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0261.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0265.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0267.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0269.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0270.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0272.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0276.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0278.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0280.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0283.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0285.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0286.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0287.jpg" alt="Chili Cook-Off 2025" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/5L1A0298.jpg" alt="Chili Cook-Off 2025" />
+          </div>
         </div>
+        <div class="carousel-dots" id="dotsContainer"></div>
+      </div>
     </section>
 
     <!-- Poster Section -->
     <section id="pricing">
-        <div class="container">
-            <h2>Admission</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Kids Admission</h3>
-                    <div class="price">$10</div>
-                </div>
-                <div class="pricing-card">
-                    <h3>Adult Admission</h3>
-                    <div class="price">$25</div>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Adult Admission<br>w/Alcohol</h3>
-                    <div class="price">$40</div>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Admission</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Kids Admission</h3>
+            <div class="price">$10</div>
+          </div>
+          <div class="pricing-card">
+            <h3>Adult Admission</h3>
+            <div class="price">$25</div>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Adult Admission<br />w/Alcohol</h3>
+            <div class="price">$40</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Rules Section -->
     <section id="rules">
-        <div class="container">
-            <h2>Competition Rules</h2>
-            <div class="rules-list">
-                <ul>
-                    <li>Pre-registration is required for all contestants. We are limiting the competition to 25 participants—first come, first served!</li>
-                    <li>No store-bought entries allowed—all chili must be made from scratch.</li>
-                    <li>Contestants are required to give their chili a unique name that describes their dish. A catchy name can attract more tasters to try your chili!</li>
-                    <li>Chili should be prepared before the event and brought in warm.</li>
-                    <li>Contestants must bring their own heating plate or crockpot to keep their chili warm during the event. Open flames are not permitted.</li>
-                    <li>We will provide ladles, tasting cups, and spoons for serving.</li>
-                    <li>Feel free to bring your own special condiments or toppings to make your chili stand out—this could be the winning touch!</li>
-                    <li>Contestants will be assigned a number stand with their entry number. There will be some common tables available for entries, but contestants may bring their own table and signage for their entry.</li>
-                </ul>
-            </div>
+      <div class="container">
+        <h2>Competition Rules</h2>
+        <div class="rules-list">
+          <ul>
+            <li>
+              Pre-registration is required for all contestants. We are limiting
+              the competition to 25 participants—first come, first served!
+            </li>
+            <li>
+              No store-bought entries allowed—all chili must be made from
+              scratch.
+            </li>
+            <li>
+              Contestants are required to give their chili a unique name that
+              describes their dish. A catchy name can attract more tasters to
+              try your chili!
+            </li>
+            <li>
+              Chili should be prepared before the event and brought in warm.
+            </li>
+            <li>
+              Contestants must bring their own heating plate or crockpot to keep
+              their chili warm during the event. Open flames are not permitted.
+            </li>
+            <li>
+              We will provide ladles, tasting cups, and spoons for serving.
+            </li>
+            <li>
+              Feel free to bring your own special condiments or toppings to make
+              your chili stand out—this could be the winning touch!
+            </li>
+            <li>
+              Contestants will be assigned a number stand with their entry
+              number. There will be some common tables available for entries,
+              but contestants may bring their own table and signage for their
+              entry.
+            </li>
+            <li>
+              Please arrive at 11:30AM to setup your station and make sure you
+              are registered in the system.
+            </li>
+            <li>
+              You may bring your own table, signs and sides for your entry. All
+              these little details may help you win.
+            </li>
+          </ul>
         </div>
+      </div>
     </section>
 
     <!-- Registration Section -->
     <section id="register">
-        <div class="container" style="text-align: center;">
-            <h2>Ready to Join?</h2>
-            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px;">
-                Register today! Limited spots available for competitors.
-            </p>
-            <a href="https://docs.google.com/spreadsheets/d/1Pp9FMXwoS2Bc0pWrGl9r_kI46mGtjpSjnW4T47TN18c/edit?usp=sharing" class="cta-button" target="_blank" style="margin: 10px;">Contestant Registration</a>
-            <a href="http://bidpal.net/26chilicookoff" class="cta-button" target="_blank" style="margin: 10px;">Attendee Registration</a>
-        </div>
+      <div class="container" style="text-align: center">
+        <h2>Ready to Join?</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px">
+          Register today! Limited spots available for competitors.
+        </p>
+        <a
+          href="https://docs.google.com/spreadsheets/d/1Pp9FMXwoS2Bc0pWrGl9r_kI46mGtjpSjnW4T47TN18c/edit?usp=sharing"
+          class="cta-button"
+          target="_blank"
+          style="margin: 10px"
+          >Contestant Registration</a
+        >
+        <a
+          href="http://bidpal.net/26chilicookoff"
+          class="cta-button"
+          target="_blank"
+          style="margin: 10px"
+          >Attendee Registration</a
+        >
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq">
-        <div class="container">
-            <h2>🌶️ Chili Cook-Off FAQ 🌶️</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h3>What constitutes chili?</h3>
-                    <p>Defining chili can be tricky, but rest assured, the official judges and the community will know it when they taste it. If it walks like chili, smells like chili, and tastes like chili, you are probably on the right track.</p>
-                </div>
+      <div class="container">
+        <h2>🌶️ Chili Cook-Off FAQ 🌶️</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h3>What constitutes chili?</h3>
+            <p>
+              Defining chili can be tricky, but rest assured, the official
+              judges and the community will know it when they taste it. If it
+              walks like chili, smells like chili, and tastes like chili, you
+              are probably on the right track.
+            </p>
+          </div>
 
-                <div class="faq-item">
-                    <h3>What are the competition categories?</h3>
-                    <p>Chilis will be judged in the following categories:</p>
-                    <ul>
-                        <li>Best Overall (1st Place and 2nd Place)</li>
-                        <li>Best Veg</li>
-                        <li>Most Original</li>
-                        <li>Spiciest</li>
-                        <li>Best Name</li>
-                    </ul>
-                </div>
+          <div class="faq-item">
+            <h3>What are the competition categories?</h3>
+            <p>Chilis will be judged in the following categories:</p>
+            <ul>
+              <li>Best Overall (1st Place and 2nd Place)</li>
+              <li>Best Veg</li>
+              <li>Most Original</li>
+              <li>Spiciest</li>
+              <li>Best Name</li>
+            </ul>
+          </div>
 
-                <div class="faq-item">
-                    <h3>How much chili should I make?</h3>
-                    <p>You do not want to run out and cut your votes short. A good rule of thumb is two to four pounds of protein per entry, adjusted as needed for vegetarian chilis. Plan generously so plenty of people can taste and vote.</p>
-                </div>
+          <div class="faq-item">
+            <h3>How much chili should I make?</h3>
+            <p>
+              You do not want to run out and cut your votes short. A good rule
+              of thumb is two to four pounds of protein per entry, adjusted as
+              needed for vegetarian chilis. Plan generously so plenty of people
+              can taste and vote.
+            </p>
+          </div>
 
-                <div class="faq-item">
-                    <h3>Can I enter more than one chili?</h3>
-                    <p>Each contestant may enter one chili unless otherwise announced. This helps keep judging fair and tasting manageable.</p>
-                </div>
+          <div class="faq-item">
+            <h3>Can I enter more than one chili?</h3>
+            <p>
+              Each contestant may enter one chili unless otherwise announced.
+              This helps keep judging fair and tasting manageable.
+            </p>
+          </div>
 
-                <div class="faq-item">
-                    <h3>Do I have to be a professional cook?</h3>
-                    <p>Absolutely not. This event is about fun, creativity, and community. Home cooks are encouraged and often win.</p>
-                </div>
+          <div class="faq-item">
+            <h3>Do I have to be a professional cook?</h3>
+            <p>
+              Absolutely not. This event is about fun, creativity, and
+              community. Home cooks are encouraged and often win.
+            </p>
+          </div>
 
-                <div class="faq-item">
-                    <h3>Is there a cost to enter as a contestant?</h3>
-                    <p>There is no cost to enter a chili, but all contestants must purchase an attendee ticket.</p>
-                </div>
+          <div class="faq-item">
+            <h3>Is there a cost to enter as a contestant?</h3>
+            <p>
+              There is no cost to enter a chili, but all contestants must
+              purchase an attendee ticket.
+            </p>
+          </div>
 
-                <div class="faq-item">
-                    <h3>Who gets to vote?</h3>
-                    <p>All attendees get a vote in the People's Choice categories, while official judges will select winners in their designated categories.</p>
-                </div>
-            </div>
+          <div class="faq-item">
+            <h3>Who gets to vote?</h3>
+            <p>
+              All attendees get a vote in the People's Choice categories, while
+              official judges will select winners in their designated
+              categories.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Mitchell 2nd Annual Chili Cook-Off. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>
+          &copy; 2026 Mitchell 2nd Annual Chili Cook-Off. All rights reserved.
+        </p>
+      </div>
     </footer>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const totalSlides = slides.length;
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const totalSlides = slides.length;
 
-        // Create dots
-        const dotsContainer = document.getElementById('dotsContainer');
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
-            dot.onclick = () => goToSlide(i);
-            dotsContainer.appendChild(dot);
-        }
+      // Create dots
+      const dotsContainer = document.getElementById("dotsContainer");
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
 
-        function showSlide(n) {
-            if (n >= totalSlides) currentSlide = 0;
-            if (n < 0) currentSlide = totalSlides - 1;
-            
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[currentSlide].classList.add('active');
+      function showSlide(n) {
+        if (n >= totalSlides) currentSlide = 0;
+        if (n < 0) currentSlide = totalSlides - 1;
 
-            // Update dots
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[currentSlide].classList.add("active");
 
-        function changeSlide(direction) {
-            currentSlide += direction;
-            showSlide(currentSlide);
-        }
+        // Update dots
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
 
-        function goToSlide(n) {
-            currentSlide = n;
-            showSlide(currentSlide);
-        }
+      function changeSlide(direction) {
+        currentSlide += direction;
+        showSlide(currentSlide);
+      }
 
-        // Auto-advance carousel every 5 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+      function goToSlide(n) {
+        currentSlide = n;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance carousel every 5 seconds
+      setInterval(() => {
+        changeSlide(1);
+      }, 5000);
     </script>
-</body>
+  </body>
 </html>
